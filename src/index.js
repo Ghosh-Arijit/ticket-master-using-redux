@@ -21,7 +21,7 @@ const app= (
 
 )
 
-store.dispatch(addTicket({ id: '1', name: 'ravi', message: 'net is down', department: 'technical', priority: 'high'}))
+store.dispatch(addTicket({ id: "1", name: 'ravi', message: 'net is down', department: 'technical', priority: 'high'}))
 
 
 ReactDOM.render(app , document.getElementById('root'));

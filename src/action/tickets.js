@@ -5,6 +5,7 @@ export const addTicket= (ticket) => {
     }
 }
 
+// removeTicket 
 export const removeTicket = (id) => {
     return {
         type: 'REMOVE_TICKET',

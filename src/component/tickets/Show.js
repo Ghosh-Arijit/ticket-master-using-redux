@@ -30,7 +30,7 @@ const TicketShow = (props) => {
 const mapStateToProps = (state, props) => { 
     const id = props.match.params.id 
     return {
-        ticket: state.tickets.find(ticket => ticket.id === Number(id))
+        ticket: state.tickets.find(ticket => ticket.id === id)
     }
 }
 

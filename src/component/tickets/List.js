@@ -8,7 +8,7 @@
                 <h1>Listing Tickets - {props.tickets.length}</h1>
                 <ul>
                     {props.tickets.map(ticket => {
-                         return <li key={ticket.id}> <Link to={`/tickets/${ticket.id}`}>{ ticket.name } </Link> </li>
+                        return <li key={ticket.id}> <Link to={`/tickets/${ticket.id}`}>{ ticket.name } </Link> </li>
                     })}
                 </ul> 
                 <Link to="/tickets/new" className= "btn btn-primary"> Add Ticket </Link> 
