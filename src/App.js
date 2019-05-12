@@ -1,9 +1,9 @@
 import React from 'react' 
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
-import TicketList from './component/tickets/List'
-import TicketNew from './component/tickets/New'
-import TicketShow from './component/tickets/Show'
+import TicketList from './components/Lists'
+import TicketNew from './components/New'
+import TicketShow from './components/Show'
 
 const App = (props) => {
   return (

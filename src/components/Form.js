@@ -34,12 +34,12 @@ class TicketForm extends React.Component {
 
     handlePriorityChange = (option) => {
         this.setState(() => ({ selectedPriorityOption: option}))
-        //console.log(option)
+        console.log(option)
     }
 
     handleDepartmentChange = (option) => {
         this.setState(() => ({ selectedDepartmentOption: option}))
-        //console.log(option)
+        console.log(option)
     }
 
     handleSubmit = (e) => {

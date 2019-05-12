@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import configureStore from "./store/configureStore"
 import App from './App';
-import { addTicket } from "./action/tickets" 
+import { startSetTickets } from "./actions/tickets" 
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 
@@ -21,8 +21,8 @@ const app= (
 
 )
 
-store.dispatch(addTicket({ id: "1", name: 'ravi', message: 'net is down', department: 'technical', priority: 'high'}))
-
+//store.dispatch(addTicket({ id: "1", name: 'ravi', message: 'net is down', department: 'technical', priority: 'high'}))
+store.dispatch(startSetTickets())
 
 ReactDOM.render(app , document.getElementById('root'));
 

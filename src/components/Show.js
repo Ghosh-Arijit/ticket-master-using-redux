@@ -1,22 +1,22 @@
 import React from 'react' 
 import { connect } from 'react-redux'
 
-import { removeTicket } from '../../action/tickets'
+import { removeTicket } from '../actions/tickets'
 
 const TicketShow = (props) => {
-    const { id, name, message, priority, department } = props.ticket 
+    const { ticket_code, name, message, priority, department } = props.ticket 
 
     const handleRemove = () => {
         const confirm = window.confirm("Are you sure? ") 
         if(confirm) {
-           props.dispatch(removeTicket(id))
+           props.dispatch(removeTicket(ticket_code))
            props.history.push('/tickets')
         }
     }
 
     return (
         <div>
-            <h2> { id } </h2> 
+            <h2> { ticket_code } </h2> 
             <p> { name }  { message } { priority } { department } </p> 
 
 
@@ -30,7 +30,7 @@ const TicketShow = (props) => {
 const mapStateToProps = (state, props) => { 
     const id = props.match.params.id 
     return {
-        ticket: state.tickets.find(ticket => ticket.id === id)
+        ticket: state.tickets.find(ticket => ticket.ticket_code === id)
     }
 }
 

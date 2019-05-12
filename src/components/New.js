@@ -1,17 +1,19 @@
-import React from 'react'
+import React from 'react' 
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import TicketForm from './Form'
 import _ from 'lodash'
 
-import  TicketForm  from './Form'
-
-import { addTicket } from '../../action/tickets'
+import { startAddTicket } from '../actions/tickets'
 
 const TicketNew = (props) => {
+
     const handleSubmit = (formData) => {
-        props.dispatch(addTicket(formData))
+        console.log('new', formData) 
+        props.dispatch(startAddTicket(formData))
         props.history.push('/tickets')
     }
+
     return (
         <div className="row">
             <div className="col-md-8">
@@ -26,8 +28,8 @@ const TicketNew = (props) => {
                         {props.previousTicket ? (
                         <React.Fragment>
                         <p className="card-text"> { props.previousTicket.name } </p>
-                        <Link to={`/tickets/${props.previousTicket.id}`}>Show</Link>
-                        </React.Fragment>) : ( <p>No Tickets Found</p>)
+                        <Link to={`/tickets/${props.previousTicket.ticket_code}`}>Show</Link>
+                        </React.Fragment>) : ( <p>This is paragraph</p>)
                         }
                     </div>
                 </div>
@@ -37,11 +39,11 @@ const TicketNew = (props) => {
     )
 }
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state) => {
     return {
-       // previousTicket: state.tickets[state.tickets.length -1]
+        //previousTicket: state.tickets[state.tickets.length - 1]
         previousTicket: _.last(state.tickets)
     }
-}
+}   
 
 export default connect(mapStateToProps)(TicketNew)
